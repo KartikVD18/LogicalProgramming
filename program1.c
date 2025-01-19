@@ -8,4 +8,4 @@ int main()
 }
 
 // gcc program1.c -o myexe
-// ./myexe
+// ./myexecls

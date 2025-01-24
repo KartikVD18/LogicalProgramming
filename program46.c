@@ -1,3 +1,5 @@
+//Check weather the number is Divisible is not.
+
 #include<stdio.h>
 #include<stdbool.h>
 

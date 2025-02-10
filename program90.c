@@ -1,32 +1,40 @@
-//Frequency of given number in an Array
+//Check if element is PRESENT in array or not.
 
 #include<stdio.h>
 #include<stdlib.h>
+#include<stdbool.h>
 
-int Frequency(int Arr[], int iSize, int iNo)
+bool Search(int Arr[], int iSize, int iNo)
 {
     int iCnt = 0;
-    int iFrequency = 0;
 
     for(iCnt=0; iCnt<iSize; iCnt++)
     {
         if(Arr[iCnt]==iNo)
         {
-            iFrequency++;
+            break;
         }
     }
-    return iFrequency;
+
+    if(iCnt==iSize)
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
 }
 
 int main()
 {
     int iCnt = 0;
-    int iRet = 0;
     int iLength = 0;
-    int *ptr = NULL;
     int iValue = 0;
+    int *ptr = NULL;
+    bool bRet = false;
 
-    printf("Enter the number of elements :\n");
+    printf("Enter the number of elements: \n");
     scanf("%d",&iLength);
 
     ptr = (int*)malloc(iLength*sizeof(int));
@@ -40,8 +48,16 @@ int main()
     printf("Enter the number that you want to search :\n");
     scanf("%d",&iValue);
 
-    iRet = Frequency(ptr, iLength, iValue);
-    printf("Frequency is :%d\n",iRet);
+    bRet = Search(ptr, iLength, iValue);
+
+    if(bRet==true)
+    {
+        printf("Element is present\n");
+    }
+    else
+    {
+        printf("Element is not present\n");
+    }
 
     free(ptr);
 

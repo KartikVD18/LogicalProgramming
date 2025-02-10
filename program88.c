@@ -1,3 +1,5 @@
+//Frequency of given number in an Array
+
 #include<stdio.h>
 #include<stdlib.h>
 
